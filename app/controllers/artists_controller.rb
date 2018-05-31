@@ -1,42 +1,42 @@
 class ArtistsController < ApplicationController
-  before_action :set_chart
   before_action :set_artist, only: [:create, :edit, :update, :destroy]
   
   
   def index
-    @artists = @chart.artist
+    @artists = Artist.all
   end
 
   def new
-    @artist = @chart.artist.new
+    @artist = Artist.new
   end
 
   def show
   end
 
   def edit
-    render :form
   end
 
   def create
-    @artist = @chart.artist(artist_params)
+    @artist = Artist.new(artist_params)
     if @artist.save
-      redirect_to [@chart, @artist]
+      redirect_to artists_path
     else
-      render :form
+      render :new
+    end
 
   end
 
   def update
     if @artist.update(artist_params)
-      redirect_to [@chart, @artist]
+      redirect_to @artist
     else
-      render :form
+      render :edit
+    end
   end
 
   def destroy
-    @artist.find(params[:id]).destroy
-    redirect_to chart_artist_path
+    @artist.destroy
+    redirect_to artists_path
   end
 
 
@@ -44,10 +44,6 @@ class ArtistsController < ApplicationController
 
     def set_artist
       @artist = Artist.find(params[:id])
-    end
-
-    def set_chart
-      @chart = Chart.find(params[:id])
     end
 
     def artist_params
