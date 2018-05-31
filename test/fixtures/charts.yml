@@ -2,10 +2,6 @@
 
 one:
   name: MyString
-  chart: one
-  artist: one
 
 two:
   name: MyString
-  chart: two
-  artist: two
