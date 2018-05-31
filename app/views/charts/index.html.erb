@@ -1,2 +1,7 @@
-<h1>Charts#index</h1>
-<p>Find me in app/views/charts/index.html.erb</p>
+<h1>Music Charts Top 100</h1>
+<% @chart.each do |chart|%>
+<h2><%= chart.name%></h2>
+<%= link_to 'Top 100 Charts Page', chart_path(chart)%>
+<%end%>
+
+
