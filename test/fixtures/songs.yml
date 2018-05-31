@@ -2,10 +2,14 @@
 
 one:
   name: MyString
+  us_rank: 1
+  eu_rank: 1
   chart: one
   artist: one
 
 two:
   name: MyString
+  us_rank: 1
+  eu_rank: 1
   chart: two
   artist: two
