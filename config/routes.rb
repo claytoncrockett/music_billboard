@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'charts/index'
+  get 'charts/new'
+  get 'charts/show'
+  get 'charts/edit'
   get 'songs/index'
   get 'songs/new'
   get 'songs/show'

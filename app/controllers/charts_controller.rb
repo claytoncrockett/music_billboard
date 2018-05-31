@@ -1,4 +1,4 @@
-class BillboardsController < ApplicationController
+class ChartsController < ApplicationController
   def index
   end
 
