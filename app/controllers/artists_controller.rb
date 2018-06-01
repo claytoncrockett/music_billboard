@@ -11,7 +11,8 @@ class ArtistsController < ApplicationController
     render :form
   end
 
-  def show
+  def show 
+   @songs = @artist.songs
   end
 
   def edit

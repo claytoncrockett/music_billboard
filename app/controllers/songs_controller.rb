@@ -1,23 +1,25 @@
 class SongsController < ApplicationController
+  before_action :set_artist
+  before_action :set_song, only: [:show, :edit, :update, :destroy]
+
   def index
     @songs = @artist.songs
   end
 
   def new
     @song = @artist.songs.new
-    render partial: "form"
+    render :form
   end
 
   def show
   end
 
   def edit
-    render partial: "form"
+    render :form
   end
 
   def create
     @song = @artist.songs.new(song_params)
-
     if @song.save
       redirect_to [@artist, @song]
     else
