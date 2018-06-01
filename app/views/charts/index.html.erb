@@ -1,7 +1,7 @@
 <h1>Music Charts Top 100</h1>
+<%= link_to  "Create Chart", new_chart_path %>
 <% @charts.each do |chart|%>
-<h2><%= chart.name%></h2>
-<%= link_to 'Top 100 Charts Page', chart_path(chart)%>
+<p><%= link_to chart.name, chart_path(chart.id)%></p>
 <%end%>
 
 

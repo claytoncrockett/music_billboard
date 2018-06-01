@@ -9,6 +9,7 @@ class ChartsController < ApplicationController
 
   def new
     @chart = Chart.new
+    render :form
   end
 
   def create
@@ -22,6 +23,7 @@ class ChartsController < ApplicationController
 
   def edit
     @chart = Chart.find(params[:id])
+    render :form
   end
 
   def update
@@ -40,6 +42,6 @@ class ChartsController < ApplicationController
 
   private
   def chart_params
-    params.require(:chart).permit(:name, :us_rank, :eu_rank)
+    params.require(:chart).permit(:name)
   end
 end
