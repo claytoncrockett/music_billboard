@@ -4,5 +4,8 @@
   <%= f.label :name %>
   <%= f.text_field :name, required: true, autofocus: true %>
   <br />
-  <%= f.submit %>
+  <%= f.label :chart_id %>
+  <%= f.select :chart_id, [['Top 100 US', 1], ['Top 100 Europe', 2]] %>
+  <br />
+  <%= f.submit%>
 <% end %>
