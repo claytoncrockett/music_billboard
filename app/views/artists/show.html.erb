@@ -1,10 +1,15 @@
 
 <h1><%= @artist.name %></h1>
 <br />
-<%= link_to 'Edit Artist', edit_artist_path(@artist) %>
-<%= link_to 'Delete Artist', @artist, method: :delete %>
-<%= link_to 'Back to Artists', artists_path(@artist) %>
-<%= link_to 'Add a New Song', new_artist_song_path(@artist) %>
-<% @songs.each do |song| %>
-  <p><%= song.name %></p>
-<% end %>
+<%= link_to 'Edit Artist', edit_artist_path(@artist) %> <br />
+<%= link_to 'Delete Artist', @artist, method: :delete %><br />
+<%= link_to 'Back to Artists', artists_path(@artist) %><br />
+<%= link_to 'Add a New Song', new_artist_song_path(@artist) %><br />
+<br />
+<div>
+<ul>
+  <% @songs.each do |song| %>
+    <li><%= link_to song.name, artist_song_path(@artist, song.id) %></li>
+  <% end %>
+</ul>
+</div>
